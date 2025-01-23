@@ -10,6 +10,9 @@ import Nomes from './routes/Nomes.jsx'
 // CRIANDO O PROVIDER
 import { CounterContextProvider } from './context/CounterContext.jsx'
 
+// CONTEXT MAIS COMPLEXO
+import { TileColorContextProvider } from './context/TitleColorContext.jsx'
+
 //CONFIGURANDO ROUTER
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 
@@ -36,7 +39,9 @@ const router = createBrowserRouter ([
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <CounterContextProvider>
-      <RouterProvider router={router} />
+      <TileColorContextProvider>
+         <RouterProvider router={router} />
+      </TileColorContextProvider>
     </CounterContextProvider>
   </StrictMode>,
 )
