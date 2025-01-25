@@ -4,13 +4,18 @@
 // REFATORANDO COM HOOK
 import { useCounterContext} from "../hooks/useCounterContext"
 
+// CONTEXTO COMPLEXO
+import { useTitleColorContext } from "../hooks/useTitleColorContext"
+
 
 const Nomes = () => {
   const {counter} = useCounterContext()
 
+  const { color } = useTitleColorContext();
+
   return (
     <div> 
-        <h1>Nomes</h1>
+        <h1 style={{color: color}}>Nomes</h1>
         <p>Valor do contador: {counter} </p>
     </div>
   )

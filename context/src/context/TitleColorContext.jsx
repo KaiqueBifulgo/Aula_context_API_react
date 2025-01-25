@@ -4,7 +4,7 @@ import { children, createContext, useReducer } from "react";
 import PropTypes from "prop-types"
 
 // eslint-disable-next-line react-refresh/only-export-components
-export const TileColorContext = createContext();
+export const TitleColorContext = createContext();
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const titleColorReducer = (state, action) => {
@@ -23,13 +23,13 @@ export const titleColorReducer = (state, action) => {
 }
 
 export const TileColorContextProvider = ({ children }) => {
-    // eslint-disable-next-line no-unused-vars
-    const [state, dispath] = useReducer(titleColorReducer, {color: "blue"})
+
+    const [state, dispatch] = useReducer(titleColorReducer, {color: "blue"})
 
     return (
-        <TileColorContext.Provider value={{...state}}>
+        <TitleColorContext.Provider value={{...state, dispatch}}>
             {children}
-        </TileColorContext.Provider>
+        </TitleColorContext.Provider>
     )
 
 }
